@@ -66,7 +66,7 @@
           }         
 	  var size = file.size || file.fileSize || 4096;
 	  if(size < 4095) { 
-		// Most probably not a real MP3
+		// Most likely not a real MP3 :(
 		console.log(path);
 		continue;
 	  }
@@ -165,7 +165,7 @@
           currentSong.onclick();
         }
       }
-      
+      //ez pz shuffle stolen from the internet
       function shuffle(){
         var pt = document.getElementById('playtable');
         //fisher yates shuffle. hopefully.
@@ -182,7 +182,8 @@
         var pt = document.getElementById('playtable');
         pt.innerHTML = '';
       }
-      
+	    
+      //error handling
       onload = function(){
         //with no dependencies, it should be fine to use this instead of ondomcontentloaded
         var a = document.createElement('audio');
@@ -219,11 +220,9 @@
           Select your folder, search your songs, create a plalist and listen to your tracks!
         </p>
           <input type="file" webkitdirectory directory multiple mozdirectory onchange="getSongs(this.files)">
-        <!-- <p style="padding-left: 15px">
-          By <a href="http://twitter.com/antimatter15">@antimatter15</a> &amp; UI built by <a href="http://twitter.com/nicovanzyl">@nicovanzyl</a>
-        </p> -->
+        
       </div>
-      <div id="support" style="position:absolute;z-index:99999;color:red;font-size:x-large"> <!-- insert cheap knockoff modernizer clone -->
+      <div id="support" style="position:absolute;z-index:99999;color:red;font-size:x-large"> 
       
       </div>
     </div>
